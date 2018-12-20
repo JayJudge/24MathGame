@@ -12,9 +12,6 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 
-
-
-
 public class MenuBarGUI{
 	private static VBox menuBar;
 	private static MenuBar topMenu;
@@ -32,6 +29,7 @@ public class MenuBarGUI{
 		message.getStyleClass().add("message");
 		topMenu = new MenuBar();
 		menuBar = new VBox();
+	//第一栏菜单
 		Menu gameMenu = new Menu("游戏");
 		MenuItem newGameMenuItem = new MenuItem("开局");
 		MenuItem exitMenuItem = new MenuItem("退出");
@@ -57,10 +55,17 @@ public class MenuBarGUI{
 		});
 		exitMenuItem.setOnAction(e->Platform.exit());
 		gameMenu.getItems().addAll(newGameMenuItem,new SeparatorMenuItem(),exitMenuItem);
-		//
+		//第二栏菜单
 		Menu helpMenu = new Menu("帮助");
 		MenuItem helpUsingMenuItem = new MenuItem("使用帮助");
-		MenuItem aboutUsMenuItem = new MenuItem("关于24点");
+		MenuItem aboutUsMenuItem = new MenuItem("关于游戏");
+		
+		helpUsingMenuItem.setOnAction(e->{
+			RuleBlock.display();
+		});
+		aboutUsMenuItem.setOnAction(e->{
+			Information.display();
+		});
 		helpMenu.getItems().addAll(helpUsingMenuItem,aboutUsMenuItem);
 	
 		topMenu.getMenus().addAll(gameMenu,helpMenu);

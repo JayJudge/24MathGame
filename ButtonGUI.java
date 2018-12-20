@@ -53,8 +53,7 @@ public class ButtonGUI{
 				cardsView.setCardsView(cardsValue,cardsColor);
 			}
 			else{
-				answerList.setAnswer("游戏已经开始\n请不要重复点击");
-				System.out.println("Game already started");
+				AlertBlock.display("游戏已经开始\n请不要重复点击");
 			}
 		});
 		//换一换
@@ -70,6 +69,7 @@ public class ButtonGUI{
 				cardsView.setCardsView(cardsValue,cardsColor);
 			}
 			else{
+				AlertBlock.display("游戏还未开始\n请点击开始按钮");			
 				System.out.println("Game Not started");
 			}
 		});
@@ -79,7 +79,7 @@ public class ButtonGUI{
 		buttons[2].setTooltip(tip2);
 		buttons[2].setOnAction(e->{
 			if(started==false){
-				System.out.println("Game not started");
+				AlertBlock.display("游戏还未开始\n请点击开始按钮");
 			}
 			else{
 				answerList.setAnswer(cardsValue);

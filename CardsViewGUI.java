@@ -35,10 +35,10 @@ public class CardsViewGUI{
 //		
 		cards = new Image[cardsValue.length];
 		cardsImageView = new ImageView[cardsValue.length];
+		//随机抽取四张牌
 		for(int i=0;i<cardsValue.length;i++){
 			String imagePath = "src/img/card/" + cardsColor[i]
 				   	+ "-" + cardsValue[i] + ".png";
-			System.out.println(imagePath);
 			cards[i] = new Image(imagePath);
 			cardsImageView[i] = new ImageView(cards[i]);	
 		}
@@ -58,7 +58,6 @@ public class CardsViewGUI{
 		for(int i=0;i<cardsValue.length;i++){
 			String imagePath = "src/img/card/" + cardsColor[i]
 				   	+ "-" + cardsValue[i] + ".png";
-			System.out.println(imagePath);
 			cards[i] = new Image(imagePath);
 			cardsImageView[i] = new ImageView(cards[i]);	
 		}
@@ -71,6 +70,4 @@ public class CardsViewGUI{
 	public static VBox getCardsView(){
 		return cardsView;
 	}
-	
-
 }
